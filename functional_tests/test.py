@@ -25,13 +25,13 @@ class NewVisitorTest(LiveServerTestCase):
         self.test_time = round(time.time() - self.test_time, 2)
         print(f"Spent time : {self.test_time}")
         return super().tearDown()
-    
+
     def test_board_top_level_view(self):
         # 게시판 app의 top level page 에 접속한다.
         self.browser.get(f"{self.live_server_url}/board/")
-        
+
         # 게시판 app의 top level page 가 잘 동작하는 지 확인한다.
         self.assertIn("게시판 top", self.browser.find_element("tag name", "body").text)
-    
+
 
     # def test_visit_todolist(self):
